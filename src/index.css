@@ -6,101 +6,108 @@
 }
 
 body {
-    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     background-color: #121212;
-    color: #e4e4e7;
+    color: #e5e5e5;
     line-height: 1.6;
 }
 
 /* --- NAVBAR --- */
 .navbar-container {
-    background-color: rgba(24, 24, 27, 0.92);
-    border-bottom: 1px solid #2e2e36;
+    background-color: #161616;
+    border-bottom: 1px solid #2a2a2a;
     position: sticky;
     top: 0;
-    z-index: 100;
-    backdrop-filter: blur(8px);
-}
-
-.navbar-container nav {
-    max-width: 1440px;
-    margin: 0 auto;
-    padding: 16px 32px;
+    z-index: 1000;
+    padding: 14px 32px;
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
-.navbar-links {
-    display: flex;
-    align-items: center;
-    gap: 28px;
-}
-
-.navbar-container a {
-    color: #a1a1aa;
-    text-decoration: none;
+.navbar-container > h1 {
     font-size: 0.95rem;
-    font-weight: 600;
-    letter-spacing: 0.5px;
-    padding: 6px 4px;
-    border-bottom: 2px solid transparent;
-    transition: color 0.2s ease, border-color 0.2s ease;
+    font-weight: 700;
+    color: #f5f5f5;
+    letter-spacing: 1px;
+    padding: 6px 12px;
+    background-color: #222222;
+    border: 1px solid #333333;
+    border-radius: 4px;
 }
 
-.navbar-container a:hover,
-.navbar-container a.active {
-    color: #f5c36a;
-    border-bottom-color: #f5c36a;
-}
-
-/* Penanda Kelompok 8 di kanan navbar */
 .navbar-container .right-container {
     display: flex;
     align-items: center;
-    flex: initial;
 }
 
-.navbar-container .right-container h1 {
-    font-size: 1rem;
-    font-weight: 700;
-    color: #f5c36a;
-    letter-spacing: 1.5px;
-    padding: 6px 14px;
-    background-color: #27272f;
-    border: 1px solid #3f3f46;
-    border-radius: 8px;
+.navbar-container nav {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.navbar-container nav a {
+    color: #a3a3a3;
+    text-decoration: none;
+    font-size: 0.92rem;
+    font-weight: 500;
+    padding: 4px 0;
+    border-bottom: 2px solid transparent;
+    transition: color 0.15s ease, border-color 0.15s ease;
+}
+
+.navbar-container nav a:hover,
+.navbar-container nav a.active {
+    color: #ffffff;
+    border-bottom-color: #d4a359;
 }
 
 /* --- HALAMAN UTAMA (INDEX) --- */
 .index-container {
     display: flex;
+    flex-wrap: wrap;
     gap: 24px;
-    min-height: calc(100vh - 68px);
-    padding: 32px;
-    max-width: 1440px;
+    max-width: 1360px;
     margin: 0 auto;
-    transition: all 0.3s ease;
-}
-
-/* Mode Split saat item diklik */
-.index-container.split-mode {
+    padding: 28px 32px 56px;
     align-items: flex-start;
 }
 
-/* Panel Kiri (Detail Video & Penjelasan) */
+/* Judul Halaman */
+.index-container > h1 {
+    flex: 0 0 100%;
+    font-size: 1.65rem;
+    font-weight: 700;
+    color: #f5f5f5;
+    letter-spacing: 0.5px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #2a2a2a;
+}
+
+/* Wadah Peta (<VisualJourneyMap />) */
+.index-container > div:first-of-type {
+    flex: 0 0 100% !important;
+    width: 100% !important;
+    height: 520px !important;
+    border-radius: 8px;
+    border: 1px solid #2e2e2e;
+    overflow: hidden;
+    margin-bottom: 8px;
+}
+
+/* --- PANEL KIRI (DETAIL VIDEO & PENJELASAN) --- */
 .left-container {
-    flex: 1.4;
+    flex: 1.35;
+    min-width: 320px;
     position: sticky;
-    top: 88px; /* Memberi jarak aman di bawah sticky navbar */
-    max-height: calc(100vh - 112px);
+    top: 80px;
+    max-height: calc(100vh - 104px);
     overflow-y: auto;
-    background-color: #1c1c21;
-    border: 1px solid #2e2e36;
-    border-radius: 16px;
+    background-color: #181818;
+    border: 1px solid #2c2c2c;
+    border-radius: 8px;
     padding: 24px;
-    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.45);
-    animation: fadeIn 0.3s ease;
 }
 
 .left-container::-webkit-scrollbar {
@@ -108,7 +115,7 @@ body {
 }
 
 .left-container::-webkit-scrollbar-thumb {
-    background-color: #3f3f46;
+    background-color: #3a3a3a;
     border-radius: 3px;
 }
 
@@ -120,11 +127,11 @@ body {
 
 .video-pop video {
     width: 100%;
-    max-height: 400px;
-    border-radius: 12px;
-    background-color: #000;
+    max-height: 360px;
+    border-radius: 6px;
+    background-color: #000000;
     object-fit: contain;
-    border: 1px solid #2e2e36;
+    border: 1px solid #2a2a2a;
 }
 
 .explain-pop {
@@ -133,33 +140,34 @@ body {
 }
 
 .explain-pop h1 {
-    font-size: 1.5rem;
-    color: #f5c36a;
-    margin-bottom: 8px;
-    letter-spacing: 0.5px;
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: #d4a359;
+    margin-bottom: 6px;
 }
 
 .explain-pop h4 {
-    font-size: 1rem;
-    color: #a1a1aa;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #8c8c8c;
     margin-bottom: 8px;
     text-transform: uppercase;
-    letter-spacing: 1px;
+    letter-spacing: 0.8px;
 }
 
 .explain-pop p {
-    font-size: 0.95rem;
-    color: #d4d4d8;
-    margin-bottom: 16px;
+    font-size: 0.94rem;
+    color: #d4d4d4;
+    margin-bottom: 18px;
     text-align: justify;
 }
 
-/* Daftar Linimasa (Timeline List) */
+/* Daftar Linimasa */
 .explain-pop ul {
     list-style: none;
-    border-left: 2px solid #f5c36a;
+    border-left: 2px solid #3a3a3a;
     padding-left: 18px;
-    margin: 16px 0 24px 6px;
+    margin: 8px 0 24px 6px;
     display: flex;
     flex-direction: column;
     gap: 14px;
@@ -168,19 +176,18 @@ body {
 .explain-pop li {
     position: relative;
     font-size: 0.92rem;
-    color: #d4d4d8;
+    color: #cccccc;
 }
 
 .explain-pop li::before {
     content: "";
     position: absolute;
-    left: -24px;
-    top: 6px;
-    width: 10px;
-    height: 10px;
-    background-color: #f5c36a;
+    left: -23px;
+    top: 7px;
+    width: 8px;
+    height: 8px;
+    background-color: #d4a359;
     border-radius: 50%;
-    box-shadow: 0 0 8px rgba(245, 195, 106, 0.6);
 }
 
 .explain-pop li strong {
@@ -189,110 +196,123 @@ body {
 
 /* Tombol Hide */
 .explain-pop button {
-    background-color: #27272f;
-    color: #f5c36a;
-    border: 1px solid #f5c36a;
-    padding: 10px 24px;
-    border-radius: 8px;
-    font-size: 0.9rem;
+    background-color: #242424;
+    color: #e5e5e5;
+    border: 1px solid #404040;
+    padding: 8px 20px;
+    border-radius: 6px;
+    font-size: 0.88rem;
     font-weight: 600;
     cursor: pointer;
-    transition: all 0.2s ease;
     align-self: flex-start;
+    transition: background-color 0.15s ease, border-color 0.15s ease;
 }
 
 .explain-pop button:hover {
-    background-color: #f5c36a;
+    background-color: #d4a359;
+    border-color: #d4a359;
     color: #121212;
 }
 
-/* Panel Kanan (Daftar Kartu) */
+/* --- PANEL KANAN (DAFTAR KARTU) --- */
 .index-container .right-container {
     flex: 1;
+    width: 100%;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 24px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
     align-content: start;
 }
 
-/* Saat split-mode aktif, kartu di kanan tersusun 1 kolom vertikal */
 .index-container.split-mode .right-container {
+    flex: 0.95;
     grid-template-columns: 1fr;
 }
 
-/* Styling Kartu Video */
 .video-one,
 .video-two,
 .video-three {
-    background-color: #1c1c21;
-    border: 1px solid #2e2e36;
-    border-radius: 14px;
+    background-color: #181818;
+    border: 1px solid #2a2a2a;
+    border-radius: 8px;
     overflow: hidden;
     cursor: pointer;
-    transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
     display: flex;
     flex-direction: column;
+    transition: border-color 0.2s ease, transform 0.2s ease;
 }
 
 .video-one:hover,
 .video-two:hover,
 .video-three:hover {
-    transform: translateY(-5px);
-    border-color: #f5c36a;
-    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.4);
+    border-color: #d4a359;
+    transform: translateY(-2px);
 }
 
 .video-one img,
 .video-two img,
+.video-three img,
 .video-three video {
     width: 100%;
-    height: 210px;
+    height: 200px;
     object-fit: cover;
-    background-color: #09090b;
-    border-bottom: 1px solid #2e2e36;
+    background-color: #0d0d0d;
+    border-bottom: 1px solid #2a2a2a;
 }
 
 .video-one h1,
 .video-two h1,
 .video-three h1 {
-    font-size: 1.15rem;
-    color: #ffffff;
-    padding: 16px 18px 8px;
+    font-size: 1.08rem;
+    font-weight: 700;
+    color: #f5f5f5;
+    padding: 16px 18px 6px;
     line-height: 1.35;
 }
 
 .video-one p,
 .video-two p,
 .video-three p {
-    font-size: 0.9rem;
-    color: #a1a1aa;
-    padding: 0 18px 20px;
+    font-size: 0.88rem;
+    color: #a3a3a3;
+    padding: 0 18px 14px;
+    flex-grow: 1;
+}
+
+.video-one h4,
+.video-two h4,
+.video-three h4 {
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: #d4a359;
+    padding: 10px 18px;
+    border-top: 1px solid #242424;
+    background-color: #141414;
 }
 
 /* --- HALAMAN SUMBER --- */
 .sumber-container {
-    max-width: 1000px;
+    max-width: 960px;
     margin: 32px auto;
     padding: 28px 32px;
-    background-color: #1c1c21;
-    border: 1px solid #2e2e36;
-    border-radius: 16px;
-    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.45);
+    background-color: #181818;
+    border: 1px solid #2a2a2a;
+    border-radius: 8px;
 }
 
 .list-sumber {
     list-style: none;
     display: flex;
     flex-direction: column;
-    gap: 18px;
+    gap: 16px;
 }
 
 .list-sumber li {
     padding-bottom: 16px;
-    border-bottom: 1px solid #2e2e36;
-    font-size: 0.95rem;
-    color: #d4d4d8;
-    line-height: 1.65;
+    border-bottom: 1px solid #262626;
+    font-size: 0.93rem;
+    color: #d4d4d4;
+    line-height: 1.6;
 }
 
 .list-sumber li:last-child {
@@ -303,46 +323,33 @@ body {
 .list-sumber li strong {
     color: #ffffff;
     display: block;
-    margin-bottom: 4px;
+    margin-bottom: 3px;
 }
 
 .list-sumber a {
-    color: #f5c36a;
+    color: #d4a359;
     text-decoration: none;
     word-break: break-all;
-    font-size: 0.9rem;
+    font-size: 0.88rem;
 }
 
 .list-sumber a:hover {
     text-decoration: underline;
 }
 
-/* Animasi Muncul */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(8px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* --- RESPONSIF (Layar Tablet & HP) --- */
+/* --- RESPONSIF --- */
 @media (max-width: 960px) {
-    .navbar-container nav {
-        padding: 14px 16px;
-    }
-
-    .navbar-container .right-container h1 {
-        font-size: 0.85rem;
-        padding: 5px 10px;
+    .navbar-container {
+        padding: 12px 16px;
     }
 
     .index-container {
         flex-direction: column;
         padding: 16px;
+    }
+
+    .index-container > div:first-of-type {
+        height: 440px !important;
     }
 
     .left-container {
